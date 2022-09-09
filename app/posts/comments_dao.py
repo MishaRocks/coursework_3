@@ -5,6 +5,7 @@ from app.utils import open_json_read
 class CommentsDAO:
 
     def get_comments_by_post_id(self, post_id):
+        """ Получение комментарием по номеру поста"""
         file = 'data/comments.json'
         data = open_json_read(file)
         posts = []

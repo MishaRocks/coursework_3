@@ -3,6 +3,7 @@ formatter = logging.Formatter("%(asctime)s :: [%(levelname)s] :: %(message)s :: 
 
 
 def my_logger(name, file, level=logging.INFO):
+    """ Функция логирования """
     file_handler = logging.FileHandler(file)
     file_handler.setFormatter(formatter)
     logger = logging.getLogger(name)

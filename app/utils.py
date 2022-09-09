@@ -3,6 +3,7 @@ from json import JSONDecodeError
 
 
 def open_json_read(my_file):
+    """ Открываем файл json"""
     try:
         with open(my_file, 'r', encoding='utf-8') as file:
             data = json.load(file)
@@ -14,6 +15,7 @@ def open_json_read(my_file):
 
 
 def add_post_json(json_file, post):
+    """ добавляем в файл json"""
     posts = open_json_read(json_file)
     posts.append(post)
     try:
@@ -27,6 +29,7 @@ def add_post_json(json_file, post):
 
 
 def del_post_json(json_file, post):
+    """ удаляем из файла json"""
     posts = open_json_read(json_file)
     posts.remove(post)
     try:

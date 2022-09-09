@@ -2,6 +2,7 @@ from app.utils import open_json_read, add_post_json, del_post_json
 
 
 def ad_bookmark(pk):
+    """ Добавление в закладки """
     file = 'data/posts.json'
     data = open_json_read(file)
     for post in data:
@@ -12,6 +13,7 @@ def ad_bookmark(pk):
 
 
 def del_bookmarks(pk):
+    """ Удаление из закладок """
     file = 'data/bookmarks.json'
     data = open_json_read(file)
     for post in data:
@@ -22,6 +24,7 @@ def del_bookmarks(pk):
 
 
 def all_bookmarks():
+    """ Вывод списка закладок """
     file = 'data/bookmarks.json'
     data = open_json_read(file)
     posts = []

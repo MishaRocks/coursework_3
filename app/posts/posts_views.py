@@ -7,12 +7,12 @@ from app.posts.posts_dao import PostDAO
 posts_blueprint = Blueprint('posts_blueprint', __name__, template_folder='templates')
 upload_posts = PostDAO()
 comments_dao = CommentsDAO()
-
+""" Подключение логированния"""
 logger_posts = my_logger('posts', 'logs/posts.log')
 
 @posts_blueprint.route('/')
 def index_page():
-
+    """ Главная страница"""
     logger_posts.info("Main page start")
     posts = upload_posts.all_posts()
     len_bookmarks = upload_posts.len_bookmarks()
@@ -21,6 +21,7 @@ def index_page():
 
 @posts_blueprint.route('/authors/<poster_name>')
 def get_posts_by_user(poster_name):
+    """ Вывод ленты пользователя"""
     logger_posts.info("Post with name")
     try:
         posts = upload_posts.get_posts_by_user(poster_name)
@@ -31,6 +32,7 @@ def get_posts_by_user(poster_name):
 
 @posts_blueprint.route('/search')
 def search():
+    """ Вывод поиска"""
     logger_posts.info("Search start")
     query = request.args.get('s').lower()
     found_posts = upload_posts.search_for_posts(query)
@@ -42,6 +44,7 @@ def search():
 
 @posts_blueprint.route('/posts/<int:pk>')
 def get_post_by_pk(pk):
+    """ вывод отдельного поста"""
     logger_posts.info("Posts with PK")
     post = upload_posts.get_post_by_pk(pk)
     comments = comments_dao.get_comments_by_post_id(pk)
@@ -51,6 +54,7 @@ def get_post_by_pk(pk):
 
 @posts_blueprint.route('/tag/<tagname>')
 def hashtags(tagname):
+    """ вывод по хештегам """
     hash_posts = upload_posts.hashtag_posts(tagname)
     return render_template('tag.html', posts=hash_posts, title=tagname)
 

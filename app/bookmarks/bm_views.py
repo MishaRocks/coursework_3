@@ -6,15 +6,18 @@ bookmarks_blueprint = Blueprint('bookmarks_blueprint', __name__, template_folder
 
 @bookmarks_blueprint.route('/bookmarks/add/<int:pk>')
 def add_bookmarks(pk):
+    """ Вывод добавления в закладки """
     ad_bookmark(pk)
     return redirect("../../", code=302)
 
 @bookmarks_blueprint.route('/bookmarks/remove/<int:pk>')
 def delate_bookmarks(pk):
+    """ Вывод удаления из закладок"""
     del_bookmarks(pk)
     return redirect("../../", code=302)
 
 @bookmarks_blueprint.route('/bookmarks')
 def index_bookmarks():
+    """ Вывод страницы закладок"""
     posts = all_bookmarks()
     return render_template('bookmarks.html', posts=posts)

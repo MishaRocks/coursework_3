@@ -17,6 +17,7 @@ app.register_blueprint(api_blueprint)
 app.register_blueprint(bookmarks_blueprint)
 
 
+# Считываем ошибки
 @app.errorhandler(404)
 def handle_bad_request(error):
     return render_template('404.html')
