@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/api/test/test_api.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/api/utils.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/bookmarks/bm_func.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/bookmarks/bm_views.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/posts/comments_class.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/posts/comments_dao.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/posts/posts_class.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/posts/posts_dao.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/posts/posts_views.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/posts/tests/test_posts.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/test_api.py" charset="UTF-8" />
+    <file url="PROJECT" charset="windows-1251" />
+  </component>
+</project>
