@@ -1,5 +1,6 @@
-
+import os
 from app.posts.posts_class import Post
+from test import ROOT_DIR
 from app.utils import open_json_read
 
 
@@ -7,7 +8,7 @@ class PostDAO:
 
     def all_posts(self):
         """ Получение всех постов"""
-        file = 'data/posts.json'
+        file = os.path.join(ROOT_DIR, 'app', 'data', 'posts.json')
         data = open_json_read(file)
         posts = []
         for post in data:
@@ -24,7 +25,7 @@ class PostDAO:
 
     def get_posts_by_user(self, name):
         """ Получение постов по пользователю"""
-        file = 'data/posts.json'
+        file = os.path.join(ROOT_DIR, 'app', 'data', 'posts.json')
         data = open_json_read(file)
         posts = []
         for post in data:
@@ -42,7 +43,7 @@ class PostDAO:
 
     def search_for_posts(self, word):
         """ Поиск по постам"""
-        file = 'data/posts.json'
+        file = os.path.join(ROOT_DIR, 'app', 'data', 'posts.json')
         data = open_json_read(file)
         found_posts = []
         for post in data:
@@ -60,7 +61,7 @@ class PostDAO:
 
     def get_post_by_pk(self, pk):
         """ Вывод поста"""
-        file = 'data/posts.json'
+        file = os.path.join(ROOT_DIR, 'app', 'data', 'posts.json')
         data = open_json_read(file)
         for post in data:
             if pk == post["pk"]:
@@ -77,7 +78,7 @@ class PostDAO:
 
     def hashtag_posts(self, tagname):
         """ Вывод по хэштегам """
-        file = 'data/posts.json'
+        file = os.path.join(ROOT_DIR, 'app', 'data', 'posts.json')
         data = open_json_read(file)
         hashtag_posts = []
         for post in data:
@@ -88,5 +89,3 @@ class PostDAO:
     def len_bookmarks(self):
         """Вывод количество закладок"""
         return len(open_json_read('data/bookmarks.json'))
-
-

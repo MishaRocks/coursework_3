@@ -1,8 +1,12 @@
+import os
+
 from flask import render_template, Blueprint, request
 
 from app.logs.logs import my_logger
 from app.posts.comments_dao import CommentsDAO
 from app.posts.posts_dao import PostDAO
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 posts_blueprint = Blueprint('posts_blueprint', __name__, template_folder='templates')
 upload_posts = PostDAO()
